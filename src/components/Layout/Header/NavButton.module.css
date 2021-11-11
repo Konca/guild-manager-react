@@ -1,0 +1,36 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  background-image: radial-gradient(closest-side, #292929eb, #292929);
+  color: white;
+  height: 5rem;
+  width: 12rem;
+  font-weight: bold;
+  animation: off-hover 300ms ease-in;
+  border:0;
+}
+
+.button:hover, .button.active {
+  z-index: 10;
+  box-shadow: 0 10px 15px -5px #888;
+  animation: on-hover 300ms ease-in;
+  transform: scale(1.08);
+}
+
+@keyframes on-hover {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes off-hover {
+  0% {
+    box-shadow: 0 10px 15px -5px #888;
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

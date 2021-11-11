@@ -1,0 +1,48 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: #292929;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 5vw;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+.hamburger{
+  position: absolute;
+  left: 2px;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+}
+.navbar> :nth-child(n+2) {
+  border: 0 solid gray;
+  border-left-width: 1px;
+}
+.navbar> :last-child {
+  border-right-width: 1px;
+}
+
+li{
+  border: 0;
+}
+.navbar > :first-child {
+  overflow: hidden;
+  white-space: nowrap; 
+  border:0 ;
+  padding-right: 2rem;
+}
+
+
+@media (max-width: 1000px){
+  .navbar> :nth-child(n+2) {
+   display: none;
+  }
+
+}
