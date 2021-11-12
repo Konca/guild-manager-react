@@ -1,0 +1,39 @@
+.dropdown {
+  padding: 0;
+  list-style: none;
+}
+.dropdownItem {
+  position: relative;
+  height: 5rem;
+  z-index: 10;
+}
+
+.dropdown > :nth-child(n + 2) {
+  height: 4rem;
+  border: 0 solid gray;
+  border-top-width: 1px;
+  z-index: 9;
+  animation: on-call 400ms ease-in;
+}
+.dropdown > :nth-child(n + 2):hover {
+    z-index: 11;
+  }
+#dropdowOverlayBackground {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000000;
+  z-index: 8;
+}
+@keyframes on-call {
+  0% {
+    z-index: -1;
+    transform: translateY(-20rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

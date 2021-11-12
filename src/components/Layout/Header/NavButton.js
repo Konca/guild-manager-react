@@ -1,10 +1,11 @@
-import classes from "./NavButton.module.css";
+import "./NavButton.css";
 
 const NavButton = (props) => {
   return (
     <button
-      className={`${classes.button} ${props.isActive ? classes.active : ""}`}
+      className={"navbutton "+props.className}
       onClick={props.onClick}
+      onBlur = {props.onBlur}
     >
       {props.children}
     </button>
