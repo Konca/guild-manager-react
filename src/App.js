@@ -1,5 +1,6 @@
+import NotFound from "./pages/NotFound";
 import { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/Layout/Header/Header";
 import HomePage from "./pages/HomePage";
 import RaidBuilder from "./pages/RaidBuilder";
@@ -8,12 +9,22 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <Route path="/RaidBuilder">
-        <RaidBuilder />
-      </Route>
-      <Route exact path="/">
-        <HomePage />
-      </Route>
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/Home" />
+          </Route>
+          <Route path="/Home">
+            <HomePage />
+          </Route>
+          <Route path="/RaidBuilder">
+            <RaidBuilder />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </main>
     </Fragment>
   );
 }

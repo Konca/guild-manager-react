@@ -1,0 +1,40 @@
+.title {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  border-radius: 14px 14px 0 0;
+  background-color: #ffffffcc;
+  padding: 0.5rem;
+}
+.content {
+  padding: 0.5rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.content textarea{
+    margin: 2%;
+    max-width: 96%;
+    min-width: 96%;
+}
+.footer {
+  margin-top: 2rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.buttons {
+  display: inline-block;
+  width: 5rem;
+  height: 2rem;
+  margin: 5px;
+}
+
+.buttonsWrapper {
+  margin-right: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
