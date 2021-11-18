@@ -1,19 +1,23 @@
-import classes from "./Button.module.css";
+import styles from "./Button.module.css";
 
 const Button = (props) => {
   const typeStyle = (type) => {
-    if (type === "submit") return classes.submit;
-    if (type === "close") return classes.close;
-    if (type === "xButton") return classes.x;
-    if (type === undefined || type === "") return "";
+    if (type === "submit") return styles.submit;
+    if (type === "close") return styles.close;
+    if (type === "xButton") return styles.x;
+    return "";
   };
 
   return (
     <button
-      className={classes.button + " " + typeStyle(props.type)}
+      className={`
+        ${styles.button}  ${typeStyle(props.type)} ${
+        props.disabled ? " " + styles.disabled : ""
+      }`}
       onClick={props.onClick}
       onBlur={props.onBlur}
       type={props.type}
+      disabled={props.disabled}
     >
       {props.children}
     </button>

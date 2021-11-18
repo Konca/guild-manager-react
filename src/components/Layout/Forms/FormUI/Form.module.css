@@ -1,0 +1,12 @@
+.content {
+  padding: 0.5rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+form {
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  color: #ffffff;
+}

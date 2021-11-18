@@ -15,11 +15,11 @@
 .submit {
   background-color: #45563d;
 }
-.close{
-  background-color:#683e3e;
+.close {
+  background-color: #683e3e;
 }
-.x{
-  padding:  1px 3px 1px 3px;
+.x {
+  padding: 1px 3px 1px 3px;
   border: 0;
 }
 
@@ -48,4 +48,12 @@
     transform: scale(1);
     z-index: 11;
   }
+}
+.disabled,
+.disabled:hover {
+  opacity: 20%;
+  box-shadow: 0 0 0 0;
+  animation: 0;
+  transform: scale(1);
+  text-shadow: 0;
 }

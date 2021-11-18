@@ -17,7 +17,10 @@ function App() {
           <Route path="/Home">
             <HomePage />
           </Route>
-          <Route path="/RaidBuilder">
+          <Route exact path="/RaidBuilder">
+            <RaidBuilder />
+          </Route>
+          <Route path="/RaidBuilder/:guildId/:raidId">
             <RaidBuilder />
           </Route>
           <Route path="*">

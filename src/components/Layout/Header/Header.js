@@ -1,4 +1,4 @@
-import classes from "./Header.module.css";
+import styles from "./Header.module.css";
 import NavButton from "./NavButton";
 
 import { NavLink, useLocation } from "react-router-dom";
@@ -7,8 +7,8 @@ import { faHome, faCaretDown, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Fragment } from "react/cjs/react.production.min";
 import Dropdown from "./Dropdown";
-import ImportForm from "../../ImportForm";
-import OpenRaid from "../../OpenRaid";
+import ImportForm from "../Forms/ImportRaid/ImportForm";
+import HistoryForm from "../Forms/RaidHistory/HistoryForm";
 
 const Header = (props) => {
   const path = useLocation();
@@ -46,13 +46,13 @@ const Header = (props) => {
 
   return (
     <Fragment>
-      {importIsShown && <ImportForm onCloseImport={hideImportHandler} />}
-      {openRaidIsShown && <OpenRaid onCloseOpenRaid={hideOpenRaidHandler} />}
-      <header className={classes.header}>
+      {importIsShown && <ImportForm onCloseForm={hideImportHandler} />}
+      {openRaidIsShown && <HistoryForm onCloseForm={hideOpenRaidHandler} />}
+      <header className={styles.header}>
         <nav>
-          <ul className={classes.navbar}>
+          <ul className={styles.navbar}>
             <li>
-              <NavLink to="/Home" activeClassName={classes.active}>
+              <NavLink to="/Home" activeClassName={styles.active}>
                 <h1>
                   Guild Manager &nbsp;
                   <FontAwesomeIcon icon={faHome} size="1x" />
@@ -70,7 +70,7 @@ const Header = (props) => {
               >
                 Raid Builder &nbsp;
                 <FontAwesomeIcon
-                  className={classes.ico}
+                  className={styles.ico}
                   icon={faCaretDown}
                   size="1x"
                 />
@@ -95,7 +95,7 @@ const Header = (props) => {
               </NavLink>
             </li>
           </ul>
-          <div className={classes.hamburger}>
+          <div className={styles.hamburger}>
             <NavButton>
               <FontAwesomeIcon icon={faBars} size="2x" />
             </NavButton>

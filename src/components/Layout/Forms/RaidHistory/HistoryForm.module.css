@@ -1,0 +1,25 @@
+.tableContainer {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #e7e7e799;
+  border-radius: 0.5rem;
+  height: 30vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.linkWrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 0.5rem;
+}
+.linkForRaid{
+  height: 2rem;
+  width: 70%;
+}
+.buttonWrapper {
+  position: absolute;
+  right: 1rem;
+  width: 5rem;
+  height: 2rem;
+}
