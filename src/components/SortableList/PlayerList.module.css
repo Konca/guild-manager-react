@@ -1,0 +1,41 @@
+.playerList{
+	background-color: #00000090;
+	margin: 0 auto;
+	font-weight: bold;
+	max-width: 20rem;
+	min-width: 15rem;
+    padding: 0.33rem;
+    min-height: 5rem;
+}
+.listTitle{
+	position: relative;
+	text-align: center;
+	padding: 0.8rem;
+	background-color: #000000;
+
+}
+.listTitle> span{
+	position: absolute;
+	margin: -6px 2px;
+	width: 20px;
+	font-size: 0.8em;
+	right: 0;
+	border: 2px solid #FFFFFF;
+}
+.listTitle>i{
+	position: absolute;
+	margin: 3px 2px;
+	right: 0;
+	font-size: 1.2em;
+
+}
+.listTitle>p{
+	display: inline;
+}
+
+.listWrapper{
+    display: inline;
+    width: 17rem;
+    background-color: #3f3f3f;
+    padding: 0.3rem;
+}
