@@ -2,15 +2,15 @@ import styles from "./RaidBuilder.module.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
 import RaidLists from "../components/SortableList/RaidLists";
-import { Fragment } from "react";
+import RaidContainers from "./RaidContainers";
+import SortRaids from "../Context/sort-raid";
 const RaidBuilder = () => {
   const params = useParams();
   const [raid, setRaid] = useState([]);
   const [raidTeams, setRaidTeams] = useState([]);
-  const [unsortedClasses, setUnsortedClasses] = useState({});
+  const [unsortedClasses, setUnsortedClasses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const fetchTeams = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -24,10 +24,11 @@ const RaidBuilder = () => {
       data.SortedRaids.forEach((team) => {
         team.TeamName !== "Benched" ? teams.push(team) : (bench = team);
       });
-
+      const benchteam = [bench];
+      console.log(benchteam);
       setRaid(data);
       setRaidTeams(teams);
-      setUnsortedClasses(bench);
+      setUnsortedClasses(benchteam);
     } catch (error) {
       setError(error.message);
     }
@@ -37,7 +38,6 @@ const RaidBuilder = () => {
   useEffect(() => {
     fetchTeams();
   }, [fetchTeams]);
-  
 
   let content = (
     <div className={styles.raidInfo}>
@@ -46,7 +46,16 @@ const RaidBuilder = () => {
   );
 
   if (raidTeams.length > 0) {
-    content = <><RaidLists type="Raids" teams={raidTeams} /><RaidLists type="Classes" teams={unsortedClasses} /></>;
+    content = (
+      <>
+        <RaidLists setTeam={setRaidTeams} type="Raids" teams={raidTeams} />
+        <RaidLists
+          setTeam={setRaidTeams}
+          type="Classes"
+          teams={unsortedClasses}
+        />
+      </>
+    );
   }
 
   if (error) {
@@ -66,18 +75,18 @@ const RaidBuilder = () => {
   }
 
   return (
-    <div>
-      <h2 className={styles.title}>Raid Builder</h2>
-      <div className={styles.raidInfo}>
-        <h3>{raid.Name}</h3>
-        <p>{raid.Description}</p>
-        <p>
-          Starting on:&nbsp;{raid.Date}&nbsp;/&nbsp;{raid.Time}&nbsp;server
-          time.
-        </p>
-      </div>
-      {content}
-    </div>
+   <>
+       <h2 className={styles.title}>Raid Builder</h2>
+        <div className={styles.raidInfo}>
+          <h3>{raid.Name}</h3>
+          <p>{raid.Description}</p>
+          <p>
+            Starting on:&nbsp;{raid.Date}&nbsp;/&nbsp;{raid.Time}&nbsp;server
+            time.
+          </p>
+        </div>
+        {content}
+      </>
   );
 };
 export default RaidBuilder;

@@ -6,6 +6,7 @@
 	min-width: 15rem;
     padding: 0.33rem;
     min-height: 5rem;
+	list-style-type: none;
 }
 .listTitle{
 	position: relative;

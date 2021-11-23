@@ -1,7 +1,38 @@
-import { Fragment } from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 import PlayerList from "./PlayerList";
 import styles from "./RaidLists.module.css";
 const RaidLists = (props) => {
+  const onDragEnd = (result) => {
+    const { destination, source, draggableId } = result;
+    if (!destination) {
+      return;
+    }
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+    let colIndex;
+    if (
+      source.droppableId === "Tanks" ||
+      source.droppableId === "Healers" ||
+      source.droppableId === "Melee-DPS" ||
+      source.droppableId === "Ranged-DPS"
+    )
+      colIndex = props.teams.findIndex((x) => x.TeamName === "Benched");
+    else
+      colIndex = props.teams.findIndex(
+        (x) => x.TeamName === source.droppableId
+      );
+    const column = props.teams[colIndex];
+    const newTeam = Array.from(column.TeamComp);
+    newTeam.splice(source.index, 1);
+    newTeam.splice(destination.index, 0, column.TeamComp[source.index]);
+    const newTeams = [...props.teams];
+    newTeams[colIndex].TeamComp = newTeam;
+    props.setTeam(newTeams);
+  };
   let content;
   if (props.type === "Raids") {
     content = (
@@ -18,7 +49,7 @@ const RaidLists = (props) => {
       melee: { TeamName: "Melee-DPS", TeamComp: [] },
       ranged: { TeamName: "Ranged-DPS", TeamComp: [] },
     };
-    props.teams.TeamComp.forEach((player) => {
+    props.teams[0].TeamComp.forEach((player) => {
       switch (player.Role) {
         case "Tanks":
           bench.tanks.TeamComp.push(player);
@@ -49,7 +80,7 @@ const RaidLists = (props) => {
     );
   }
 
-  return <>{content}</>;
+  return <DragDropContext onDragEnd={onDragEnd}>{content}</DragDropContext>;
 };
 
 export default RaidLists;

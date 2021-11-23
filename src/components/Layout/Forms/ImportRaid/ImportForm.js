@@ -55,7 +55,7 @@ const ImportForm = (props) => {
   };
   const formSubmitHandler = (event) => {
     history.push("/RaidBuilder");
-    console.log(textareaText.trim);
+    console.log(textareaText.trim());
     event.preventDefault();
     props.onCloseForm();
   };
