@@ -9,8 +9,9 @@ import { Fragment } from "react/cjs/react.production.min";
 import Dropdown from "./Dropdown";
 import ImportForm from "../Forms/ImportRaid/ImportForm";
 import HistoryForm from "../Forms/RaidHistory/HistoryForm";
+import CSVReadProvider from "../../../Context/CSVReadProvider";
 
-const Header = (props) => {
+const Header = () => {
   const path = useLocation();
   const [raidDDActive, setRaidDDActive] = useState(false);
   const [importIsShown, setImportIsShown] = useState(false);
@@ -46,7 +47,11 @@ const Header = (props) => {
 
   return (
     <Fragment>
-      {importIsShown && <ImportForm onCloseForm={hideImportHandler} />}
+      {importIsShown && (
+        <CSVReadProvider>
+          <ImportForm onCloseForm={hideImportHandler} />
+        </CSVReadProvider>
+      )}
       {openRaidIsShown && <HistoryForm onCloseForm={hideOpenRaidHandler} />}
       <header className={styles.header}>
         <nav>

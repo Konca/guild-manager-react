@@ -1,13 +1,14 @@
 import NotFound from "./pages/NotFound";
-import { Fragment } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "./components/Layout/Header/Header";
 import HomePage from "./pages/HomePage";
 import RaidBuilder from "./pages/RaidBuilder";
+import RaidBuilderNew from "./pages/RaidBuilderNew";
+import CSVReadProvider from "./Context/CSVReadProvider";
 
 function App() {
   return (
-    <Fragment>
+    <>
       <Header />
       <main>
         <Switch>
@@ -18,17 +19,22 @@ function App() {
             <HomePage />
           </Route>
           <Route exact path="/RaidBuilder">
-            <RaidBuilder />
+            <NotFound />
           </Route>
           <Route path="/RaidBuilder/:guildId/:raidId">
-            <RaidBuilder />
+              <RaidBuilder />
+          </Route>
+          <Route path="/RaidBuilder/New">
+            <CSVReadProvider>
+              <RaidBuilderNew />
+            </CSVReadProvider>
           </Route>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
       </main>
-    </Fragment>
+    </>
   );
 }
 

@@ -1,92 +1,90 @@
 import styles from "./RaidBuilder.module.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
-import RaidLists from "../components/SortableList/RaidLists";
-import RaidContainers from "./RaidContainers";
-import SortRaids from "../Context/sort-raid";
+import RaidContainer from "../components/SortableList/RaidContainer";
+import RaidDescription from "../components/SortableList/RaidDescription";
 const RaidBuilder = () => {
   const params = useParams();
-  const [raid, setRaid] = useState([]);
-  const [raidTeams, setRaidTeams] = useState([]);
-  const [unsortedClasses, setUnsortedClasses] = useState([]);
+  const [raid, setRaid] = useState({});
+  const [sortedRaid, setSortedRaid] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const fetchTeams = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
       const response = await fetch(
-        "../../../../dummy/" + params.raidId + ".json"
+        "https://guild-manager-720d2-default-rtdb.europe-west1.firebasedatabase.app/RHO/" + params.raidId + ".json"
       );
       const data = await response.json();
-      const teams = [];
-      let bench = {};
-      data.SortedRaids.forEach((team) => {
-        team.TeamName !== "Benched" ? teams.push(team) : (bench = team);
-      });
-      const benchteam = [bench];
-      console.log(benchteam);
+
       setRaid(data);
-      setRaidTeams(teams);
-      setUnsortedClasses(benchteam);
+      setSortedRaid(data.SortedRaids);
     } catch (error) {
       setError(error.message);
     }
     setIsLoading(false);
   }, [params.raidId]);
 
+  const saveHandler = async (saveData) => {
+    const response = await fetch(
+      "https://guild-manager-720d2-default-rtdb.europe-west1.firebasedatabase.app/RHO/" + params.raidId + ".json",
+      {
+        method: "POST",
+        body: JSON.stringify(saveData),
+        headers: { "Content-Type": "application/json" 
+      }
+      });
+      const data=await response.json();
+      console.log(data)
+  };
+
   useEffect(() => {
     fetchTeams();
   }, [fetchTeams]);
 
-  let content = (
-    <div className={styles.raidInfo}>
-      <p>No raid with this ID found.</p>
-    </div>
-  );
-
-  if (raidTeams.length > 0) {
+  let content = <RaidDescription>No raid with this ID found.</RaidDescription>;
+  if (Object.keys(raid).length > 0) {
     content = (
       <>
-        <RaidLists setTeam={setRaidTeams} type="Raids" teams={raidTeams} />
-        <RaidLists
-          setTeam={setRaidTeams}
-          type="Classes"
-          teams={unsortedClasses}
+        <RaidDescription
+          raidInfo={{
+            Name: raid.Name,
+            Description: raid.Description,
+            Date: raid.Date,
+            Time: raid.Time,
+          }}
         />
+        <RaidContainer saveRaid={setSortedRaid} raids={sortedRaid} />
       </>
     );
   }
 
   if (error) {
-    content = (
-      <div className={styles.raidInfo}>
-        <p>{error}</p>
-      </div>
-    );
+    content = <RaidDescription>{error}</RaidDescription>;
   }
 
   if (isLoading) {
-    content = (
-      <div className={styles.raidInfo}>
-        <p>Loading...</p>
-      </div>
-    );
+    content = <RaidDescription>Loading...</RaidDescription>;
   }
-
+  const saveRaidHandler = () => {
+    const toSave = {
+      Name: raid.Name,
+      Description: raid.Description,
+      Date: raid.Date,
+      Time: raid.Time,
+      SortedRaids: sortedRaid,
+    };
+    saveHandler(toSave)
+  };
   return (
-   <>
-       <h2 className={styles.title}>Raid Builder</h2>
-        <div className={styles.raidInfo}>
-          <h3>{raid.Name}</h3>
-          <p>{raid.Description}</p>
-          <p>
-            Starting on:&nbsp;{raid.Date}&nbsp;/&nbsp;{raid.Time}&nbsp;server
-            time.
-          </p>
-        </div>
-        {content}
-      </>
+    <>
+      <button onClick={saveRaidHandler}>asfd</button>
+      <h2 className={styles.title}>Raid Builder</h2>
+
+      {content}
+    </>
   );
 };
 export default RaidBuilder;

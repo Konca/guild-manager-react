@@ -8,7 +8,7 @@ const PlayerList = (props) => {
         <p>{props.team.TeamName}</p>
         <span>{props.team.TeamComp.length || 0}</span>
       </div>
-      <Droppable droppableId={props.team.TeamName}>
+      <Droppable droppableId={props.id}>
         {(provided) => (
           <ul className={styles.playerList}
             ref={provided.innerRef}

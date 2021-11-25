@@ -1,8 +1,10 @@
 import styles from "./ImportForm.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Form from "../FormUI/Form";
+import CsvReader from "../../../../Context/csv-reader";
 const ImportForm = (props) => {
+  const csvCtx= useContext(CsvReader)
   const history = useHistory();
   const [numberOfRaids, setNumberOfRaids] = useState("1");
   const [raidSize, setraidSize] = useState("10");
@@ -54,8 +56,8 @@ const ImportForm = (props) => {
     setTextareaText(event.target.value);
   };
   const formSubmitHandler = (event) => {
-    history.push("/RaidBuilder");
-    console.log(textareaText.trim());
+    csvCtx.sortNewRaid(textareaText.trim())
+    history.push("/RaidBuilder/New");
     event.preventDefault();
     props.onCloseForm();
   };
