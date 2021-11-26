@@ -1,17 +1,17 @@
 import styles from "./Header.module.css";
 import NavButton from "./NavButton";
-
 import { NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faCaretDown, faBars } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { Fragment } from "react/cjs/react.production.min";
+import { useState,useContext } from "react";
 import Dropdown from "./Dropdown";
 import ImportForm from "../Forms/ImportRaid/ImportForm";
 import HistoryForm from "../Forms/RaidHistory/HistoryForm";
-import CSVReadProvider from "../../../Context/CSVReadProvider";
+import CsvReader from "../../../Context/csv-reader.js"
 
 const Header = () => {
+  
+  const csvCtx = useContext(CsvReader);
   const path = useLocation();
   const [raidDDActive, setRaidDDActive] = useState(false);
   const [importIsShown, setImportIsShown] = useState(false);
@@ -33,6 +33,7 @@ const Header = () => {
   };
   const showImportHandler = () => {
     setImportIsShown(true);
+    csvCtx.setIsNewRaid(true)
   };
   const hideImportHandler = () => {
     setImportIsShown(false);
@@ -46,12 +47,8 @@ const Header = () => {
   };
 
   return (
-    <Fragment>
-      {importIsShown && (
-        <CSVReadProvider>
-          <ImportForm onCloseForm={hideImportHandler} />
-        </CSVReadProvider>
-      )}
+    <>
+        {importIsShown && <ImportForm onCloseForm={hideImportHandler} />}
       {openRaidIsShown && <HistoryForm onCloseForm={hideOpenRaidHandler} />}
       <header className={styles.header}>
         <nav>
@@ -108,7 +105,7 @@ const Header = () => {
         </nav>
       </header>
       <Dropdown></Dropdown>
-    </Fragment>
+    </>
   );
 };
 

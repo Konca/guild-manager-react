@@ -8,7 +8,7 @@ import CSVReadProvider from "./Context/CSVReadProvider";
 
 function App() {
   return (
-    <>
+    <CSVReadProvider>
       <Header />
       <main>
         <Switch>
@@ -22,19 +22,17 @@ function App() {
             <NotFound />
           </Route>
           <Route path="/RaidBuilder/:guildId/:raidId">
-              <RaidBuilder />
+            <RaidBuilder />
           </Route>
           <Route path="/RaidBuilder/New">
-            <CSVReadProvider>
-              <RaidBuilderNew />
-            </CSVReadProvider>
+            <RaidBuilderNew />
           </Route>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
       </main>
-    </>
+    </CSVReadProvider>
   );
 }
 

@@ -4,13 +4,13 @@ import { useHistory } from "react-router-dom";
 import Form from "../FormUI/Form";
 import CsvReader from "../../../../Context/csv-reader";
 const ImportForm = (props) => {
-  const csvCtx= useContext(CsvReader)
+  const csvCtx = useContext(CsvReader);
   const history = useHistory();
   const [numberOfRaids, setNumberOfRaids] = useState("1");
   const [raidSize, setraidSize] = useState("10");
   const [textareaText, setTextareaText] = useState("");
   const [isValid, setIsValid] = useState(false);
-  const [inputDisabled,setInputDisabled] = useState(false)
+  const [inputDisabled, setInputDisabled] = useState(false);
   useEffect(() => {
     setIsValid(textareaText.trim().length > 100);
   }, [textareaText]);
@@ -47,7 +47,6 @@ const ImportForm = (props) => {
     reader.readAsText(event.target.files[0]);
     reader.onerror = () => console.log(reader.error);
     reader.onload = () => {
-      //temp way
       setTextareaText(reader.result);
       setInputDisabled(true);
     };
@@ -56,9 +55,10 @@ const ImportForm = (props) => {
     setTextareaText(event.target.value);
   };
   const formSubmitHandler = (event) => {
-    csvCtx.sortNewRaid(textareaText.trim())
-    history.push("/RaidBuilder/New");
     event.preventDefault();
+    csvCtx.setIsDragDisabled(false)
+    csvCtx.sortNewRaid(textareaText.trim(),raidSize,numberOfRaids);
+    if (csvCtx.isNewRaid) history.push("/RaidBuilder/New");
     props.onCloseForm();
   };
   return (
@@ -70,7 +70,7 @@ const ImportForm = (props) => {
     >
       <label htmlFor={styles.csvImportField}>Paste in your Raid CSV:</label>
       <textarea
-       disabled={inputDisabled}
+        disabled={inputDisabled}
         value={textareaText}
         id={styles.csvImportField}
         rows="10"

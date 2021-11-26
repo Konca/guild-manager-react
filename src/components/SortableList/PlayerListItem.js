@@ -1,8 +1,12 @@
 import styles from "./PlayerListItem.module.css";
 import { Draggable } from "react-beautiful-dnd";
+import { useContext } from "react";
+import CsvReader from "../../Context/csv-reader";
+
 const PlayerListItem = (props) => {
+  const csvCtx=useContext(CsvReader)
   return (
-    <Draggable draggableId={props.id} index={props.index}>
+    <Draggable draggableId={props.id} index={props.index} isDragDisabled={csvCtx.isDragDisabled}>
       {(provided) => (
         <li
           {...provided.draggableProps}

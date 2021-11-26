@@ -1,9 +1,12 @@
 import styles from "./RaidBuilder.module.css";
 import { useParams } from "react-router-dom";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback ,useContext} from "react";
 import RaidContainer from "../components/SortableList/RaidContainer";
 import RaidDescription from "../components/SortableList/RaidDescription";
+import CsvReader from "../Context/csv-reader";
+
 const RaidBuilder = () => {
+  const csvCtx=useContext(CsvReader)
   const params = useParams();
   const [raid, setRaid] = useState({});
   const [sortedRaid, setSortedRaid] = useState([]);
@@ -41,6 +44,8 @@ const RaidBuilder = () => {
   };
 
   useEffect(() => {
+    
+    csvCtx.setIsDragDisabled(true)
     fetchTeams();
   }, [fetchTeams]);
 
@@ -79,9 +84,13 @@ const RaidBuilder = () => {
     };
     saveHandler(toSave);
   };
+  const editHandler= ()=>{
+    csvCtx.setIsDragDisabled(false)
+  }
   return (
     <>
       <button onClick={saveRaidHandler}>Save</button>
+      <button onClick={editHandler}>Enable Edit</button>
       <h2 className={styles.title}>Raid Builder</h2>
 
       {content}
