@@ -1,0 +1,724 @@
+{
+  "00503414025367652": {
+    "Name": "SSC",
+    "ID": "00503414025367652",
+    "Description": "\"Serpentshrine Cavern - Phase 2 bcc-classic - SR=MS/OS +1. Mainspec and SR share a +1. Attunement for SSC begins and ends in Slavepens Heroic. Only signup if you are attuned.\"",
+    "Date": "27-10-2021",
+    "Time": "20:00",
+    "SortedRaids": [
+      {
+        "TeamName": "Raid 1",
+        "TeamComp": [
+          {
+            "Role": "Tank",
+            "Class": "Warrior",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Raxan",
+            "ID": "523536955456094240"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Paladin",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Babydin",
+            "ID": "296771181783023617"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Shaman",
+            "Spec": "Restoration",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Novó",
+            "ID": "228188220804956160"
+          }
+        ]
+      },
+      {
+        "TeamName": "Raid 2",
+        "TeamComp": [
+          {
+            "Role": "Tank",
+            "Class": "Warrior",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Tsourapo",
+            "ID": "237969307995209729"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Paladin",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Wrake",
+            "ID": "134036388004888576"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Priest",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Pearlygail",
+            "ID": "362974315555192833"
+          }
+        ]
+      },
+      {
+        "TeamName": "Benched",
+        "TeamComp": [
+          {
+            "Role": "Tank",
+            "Class": "Paladin",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Liomi",
+            "ID": "815548443321565184"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Druid",
+            "Spec": "Guardian",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Kelssier",
+            "ID": "592271274714333208"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Priest",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Grinz",
+            "ID": "398386632346304514"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Priest",
+            "Spec": "Discipline",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Aramen",
+            "ID": "351641385247571978"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Paladin",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Cenpen",
+            "ID": "565077471150604289"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Paladin",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Enraged-Officer",
+            "Name": "Tinkerbellé",
+            "ID": "623607992910217266"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Druid",
+            "Spec": "Restoration",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Loramon",
+            "ID": "275775456563822594"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Druid",
+            "Spec": "Restoration",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Lilymusprime",
+            "ID": "436911735299899394"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Warrior",
+            "Spec": "Fury",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Bunnyterror",
+            "ID": "711363743321161759"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Warrior",
+            "Spec": "Fury",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "wkimmeh",
+            "ID": "144536163888136193"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Warrior",
+            "Spec": "Fury",
+            "Status": "Tentative",
+            "Rank": "Veteran",
+            "Name": "Honor",
+            "ID": "238009162167091200"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Warrior",
+            "Spec": "Fury",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "Vel",
+            "ID": "236998470895009792"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Shaman",
+            "Spec": "Enhancement",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Ruinn/Elvor",
+            "ID": "363407616363200524"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Shaman",
+            "Spec": "Enhancement",
+            "Status": "Signed",
+            "Rank": "Enraged-Officer",
+            "Name": "Marash",
+            "ID": "523225706558390292"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Rogue",
+            "Spec": "Combat",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "Fervour",
+            "ID": "261842180094558209"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Rogue",
+            "Spec": "Combat",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Mordgrym",
+            "ID": "183625349186322432"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Rogue",
+            "Spec": "Combat",
+            "Status": "Signed",
+            "Rank": "Enraged-Officer",
+            "Name": "Celindir",
+            "ID": "397832972947947520"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Paladin",
+            "Spec": "Retribution",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "RussianEsfand",
+            "ID": "440829991119355919"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Paladin",
+            "Spec": "Retribution",
+            "Status": "Tentative",
+            "Rank": "Pug",
+            "Name": "Vár",
+            "ID": "695339066773995521"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Paladin",
+            "Spec": "Retribution",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Omadin",
+            "ID": "387416378606485505"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Paladin",
+            "Spec": "Retribution",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Metuzalem",
+            "ID": "524316702847270925"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Druid",
+            "Spec": "Feral",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "PoisedNoise",
+            "ID": "389067963879391246"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Warlock",
+            "Spec": "Destruction",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Fiddle/Naturefinger",
+            "ID": "501467436617302016"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Warlock",
+            "Spec": "Destruction",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "Dreadfoodle",
+            "ID": "409775908275093506"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Shaman",
+            "Spec": "Elemental",
+            "Status": "Signed",
+            "Rank": "Enraged-Officer",
+            "Name": "Rewddog",
+            "ID": "127880025625198593"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Priest",
+            "Spec": "Shadow",
+            "Status": "Signed",
+            "Rank": "Enraged-Officer",
+            "Name": "Alasyre",
+            "ID": "403965543364952074"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Priest",
+            "Spec": "Shadow",
+            "Status": "Tentative",
+            "Rank": "Sulky-Social",
+            "Name": "Tomatensoep",
+            "ID": "763834995977748550"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Priest",
+            "Spec": "Shadow",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "HollowUK",
+            "ID": "701071109163974666"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Fire",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Gnomalix",
+            "ID": "302207546914242560"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Fire",
+            "Status": "Late",
+            "Rank": "Pug",
+            "Name": "Gizmagi",
+            "ID": "699268991843172464"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Arcane",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "lunaminica",
+            "ID": "234701513505636353"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Arcane",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Ssubzero",
+            "ID": "785907275294310481"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Hunter",
+            "Spec": "Beastmastery",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Legless",
+            "ID": "293026498703654914"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Hunter",
+            "Spec": "Beastmastery",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Vexhalia",
+            "ID": "447394581236023296"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Hunter",
+            "Spec": "Beastmastery",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Gilgarion",
+            "ID": "710384704062357514"
+          }
+        ]
+      }
+    ]
+  },
+  "01055030164066315": {
+    "Name": "Gruul/Mag",
+    "ID": "01055030164066315",
+    "Description": "SR>MS>OS+1 - Soft res - 1 per night (covers both raids for fairness for all as limited loot and 25 people) +1 follows you from Gruul to Maggy Need 5 healers for Gruul 6 for Maggy. 4 Tanks (3 + 1 OT) 1 Mage Tank with 9.5K unbuffed health. 2 Warlocks. Minimum to run these.\"",
+    "Date": "28-10-2021",
+    "Time": "20:00",
+    "SortedRaids": [
+      {
+        "TeamName": "Raid 1",
+        "TeamComp": [
+          {
+            "Role": "Tank",
+            "Class": "Warrior",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Stratta",
+            "ID": "799983479596646430"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Warrior",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Cupìd",
+            "ID": "144730791635714048"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Paladin",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Babydin",
+            "ID": "296771181783023617"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Shaman",
+            "Spec": "Restoration",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Novó",
+            "ID": "228188220804956160"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Priest",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Legless/Bacta",
+            "ID": "293026498703654914"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Priest",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Belief/Altaiir",
+            "ID": "551314988979978250"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Paladin",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Enraged-Officer",
+            "Name": "Tinkerbellé",
+            "ID": "623607992910217266"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Paladin",
+            "Spec": "Holy",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Kelssier",
+            "ID": "592271274714333208"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Shaman",
+            "Spec": "Restoration",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "ChainSlinger",
+            "ID": "176376311441260545"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Druid",
+            "Spec": "Restoration",
+            "Status": "Tentative",
+            "Rank": "Pug",
+            "Name": "Argila",
+            "ID": "238347103170985984"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Warrior",
+            "Spec": "Fury",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Spiicky",
+            "ID": "586675486764040195"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Warrior",
+            "Spec": "Fury",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Sabir(Alex)",
+            "ID": "231848413983932418"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Shaman",
+            "Spec": "Enhancement",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Ruinn/Elvor",
+            "ID": "363407616363200524"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Paladin",
+            "Spec": "Retribution",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Omelette",
+            "ID": "387416378606485505"
+          },
+          {
+            "Role": "Melee-DPS",
+            "Class": "Druid",
+            "Spec": "Feral",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "minstercat",
+            "ID": "774358275839492126"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Warlock",
+            "Spec": "Destruction",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "britanicus",
+            "ID": "640226273184055327"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Fire",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Madina",
+            "ID": "710392753208557689"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Arcane",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Hollow/Manly/Wukkie",
+            "ID": "701071109163974666"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Priest",
+            "Spec": "Shadow",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Machis",
+            "ID": "211137073107828737"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Warlock",
+            "Spec": "Destruction",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Smallbut",
+            "ID": "633662796915015681"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Hunter",
+            "Spec": "Beastmastery",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "Mes/Honey",
+            "ID": "102812607420854272"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Hunter",
+            "Spec": "Beastmastery",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Mushypeas",
+            "ID": "371724778479943680"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Shaman",
+            "Spec": "Elemental",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Pearlygail",
+            "ID": "362974315555192833"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Hunter",
+            "Spec": "Beastmastery",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Nihyal",
+            "ID": "526405207211376642"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Hunter",
+            "Spec": "Beastmastery",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Gilgarion/Anselme",
+            "ID": "710384704062357514"
+          }
+        ]
+      },
+      {
+        "TeamName": "Benched",
+        "TeamComp": [
+          {
+            "Role": "Tank",
+            "Class": "Warrior",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Raxan",
+            "ID": "523536955456094240"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Paladin",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Pug",
+            "Name": "Hanzar",
+            "ID": "409775908275093506"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Paladin",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Liomi",
+            "ID": "815548443321565184"
+          },
+          {
+            "Role": "Tank",
+            "Class": "Paladin",
+            "Spec": "Protection",
+            "Status": "Signed",
+            "Rank": "Veteran",
+            "Name": "Wrake",
+            "ID": "134036388004888576"
+          },
+          {
+            "Role": "Healer",
+            "Class": "Druid",
+            "Spec": "Restoration",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Muzzie/JohnnyYen",
+            "ID": "243308756195213312"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Fire",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Turbpuddle",
+            "ID": "398386632346304514"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Warlock",
+            "Spec": "Destruction",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Zaluron",
+            "ID": "640625967634710546"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Fire",
+            "Status": "Signed",
+            "Rank": "Sulky-Social",
+            "Name": "Tattimaagi/Drood",
+            "ID": "378983478672490497"
+          },
+          {
+            "Role": "Ranged-DPS",
+            "Class": "Mage",
+            "Spec": "Fire",
+            "Status": "Signed",
+            "Rank": "Riled-Rookie",
+            "Name": "Gnomalix",
+            "ID": "302207546914242560"
+          }
+        ]
+      }
+    ]
+  },
+  "raids": [
+    { "Name": "SSC", "Date": "27-10-2021", "ID": "00503414025367652" },
+    { "Name": "Gruul/Mag", "Date": "28-10-2021", "ID": "01055030164066315" }
+  ]
+}

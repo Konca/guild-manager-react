@@ -15,7 +15,9 @@ const RaidBuilder = () => {
     setError(null);
     try {
       const response = await fetch(
-        "https://guild-manager-720d2-default-rtdb.europe-west1.firebasedatabase.app/RHO/" + params.raidId + ".json"
+        "https://guild-manager-720d2-default-rtdb.europe-west1.firebasedatabase.app/RHO/" +
+          params.raidId +
+          ".json"
       );
       const data = await response.json();
 
@@ -27,17 +29,15 @@ const RaidBuilder = () => {
     setIsLoading(false);
   }, [params.raidId]);
 
-  const saveHandler = async (saveData) => {
-    const response = await fetch(
-      "https://guild-manager-720d2-default-rtdb.europe-west1.firebasedatabase.app/RHO/" + params.raidId + ".json",
+  const saveHandler = async (raidToSave) => {
+     await fetch(
+      "https://guild-manager-720d2-default-rtdb.europe-west1.firebasedatabase.app/RHO/"+raid.ID+".json",
       {
-        method: "POST",
-        body: JSON.stringify(saveData),
-        headers: { "Content-Type": "application/json" 
+        method: "PUT",
+        body: JSON.stringify(raidToSave),
+        headers: { "Content-Type": "application/json" },
       }
-      });
-      const data=await response.json();
-      console.log(data)
+    ); 
   };
 
   useEffect(() => {
@@ -72,15 +72,16 @@ const RaidBuilder = () => {
     const toSave = {
       Name: raid.Name,
       Description: raid.Description,
+      ID: raid.ID,
       Date: raid.Date,
       Time: raid.Time,
       SortedRaids: sortedRaid,
     };
-    saveHandler(toSave)
+    saveHandler(toSave);
   };
   return (
     <>
-      <button onClick={saveRaidHandler}>asfd</button>
+      <button onClick={saveRaidHandler}>Save</button>
       <h2 className={styles.title}>Raid Builder</h2>
 
       {content}

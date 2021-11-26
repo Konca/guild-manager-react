@@ -10,15 +10,25 @@ const HistoryForm = (props) => {
   const [selectedRaid, setSelectedRaid] = useState("");
   const [raidLink, setRaidLink] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const history = useHistory();
   const fetchRaidHistory = useCallback(async () => {
-    const response = await fetch("../../../../dummy/RHO-Raid_History.json");
-    const data = await response.json();
-    const transformedRaids = data.raids.map((raidData) => {
-      return { name: raidData.Name, date: raidData.Date, id: raidData.ID };
-    });
-    setRaids(transformedRaids);
+    try {
+      setIsLoading(true);
+      const response = await fetch(
+        "https://guild-manager-720d2-default-rtdb.europe-west1.firebasedatabase.app/RHO/raids.json"
+      );
+      const data = await response.json();
+      const transformedRaids = data.map((raidData) => {
+        return { name: raidData.Name, date: raidData.Date, id: raidData.ID };
+      });
+      setRaids(transformedRaids);
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -38,6 +48,18 @@ const HistoryForm = (props) => {
   const getLinkHandler = () => {
     setRaidLink(window.location.host + "/RaidBuilder/RHO/" + selectedRaid);
   };
+  let content = "No Raids Found!";
+  if (raids.length > 0) {
+    content = (  <HistoryList onSelectRaid={raidSelecterHandler} raids={raids} />  );
+  }
+  if (error) {
+    content = error;
+  }
+
+  if (isLoading) {
+    content = "Loading...";
+  }
+
   return (
     <Form
       formTitle="Open an existing Raid"
@@ -47,7 +69,7 @@ const HistoryForm = (props) => {
     >
       <label>Select a raid from the list:</label>
       <div className={styles.tableContainer}>
-        <HistoryList onSelectRaid={raidSelecterHandler} raids={raids} />
+        {content}
       </div>
       <div className={styles.linkWrapper}>
         <input readOnly value={raidLink} className={styles.linkForRaid}></input>
